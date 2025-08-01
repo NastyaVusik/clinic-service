@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-company-user
+      author: dev
+      changes:
+        - createTable:
+            tableName: company_user
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: login
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true

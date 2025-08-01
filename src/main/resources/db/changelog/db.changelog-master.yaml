@@ -1,7 +1,6 @@
-databaseChangeLog: []
-#  - changeSet:
-#      id: 0
-#      author: admin
-#      changes:
-#        -
+databaseChangeLog:
+  - include: file:v1__create_company_user.yaml
+  - include: file:v1__create_patient_profile.yaml
+  - include: file:v1__create_patient_note.yaml
+  - include: file:v1__create_patient_old_client_guid.yaml
 

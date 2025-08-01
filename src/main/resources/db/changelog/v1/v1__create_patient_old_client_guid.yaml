@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-patient-old-client-guid
+      author: dev
+      changes:
+        - createTable:
+            tableName: patient_old_client_guid
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: patient_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_guid
+                  type: UUID
+                  constraints:
+                    nullable: false
+        - addUniqueConstraint:
+            tableName: patient_old_client_guid
+            columnNames: client_guid
+            constraintName: uq_patient_old_client_guid
+
+        - addForeignKeyConstraint:
+            baseTableName: patient_old_client_guid
+            baseColumnNames: patient_id
+            referencedTableName: patient_profile
+            referencedColumnNames: id
+            constraintName: fk_client_guid_to_patient
+            onDelete: CASCADE
