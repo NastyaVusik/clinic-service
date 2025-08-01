@@ -24,21 +24,23 @@ services:
         max-size: "10m"
         max-file: "3"
 
-  clinic-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: clinic-app
-    depends_on:
-      postgres:
-        condition: service_healthy
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/clinic
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: admin
-    ports:
-      - "8080:8080"
-    restart: on-failure
+#  clinic-app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: clinic-app
+#    depends_on:
+#      postgres:
+#        condition: service_healthy
+#    environment:
+#      - DB_HOST=postgres
+#      - DB_PORT=5432
+#      - POSTGRES_DB=clinic
+#      - POSTGRES_USER=admin
+#      - POSTGRES_PASSWORD=admin
+#    ports:
+#      - "8080:8080"
+#    restart: on-failure
 
 volumes:
   clinic-db-data:

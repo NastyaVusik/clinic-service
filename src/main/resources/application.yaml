@@ -4,9 +4,9 @@ spring:
       clinic-service
 
   datasource:
-    url: jdbc:postgresql://postgres:5432/clinic
-    username: admin
-    password: admin
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${POSTGRES_DB:clinic}
+    username: ${POSTGRES_USER:admin}
+    password: ${POSTGRES_PASSWORD:admin}
     driver-class-name: org.postgresql.Driver
 
   jpa:
