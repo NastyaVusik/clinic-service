@@ -16,7 +16,22 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+old-system:
+  host: ${OLD_SYSTEM_HOST:http://localhost:8080}
+
+import:
+  notes:
+    cron: "0 15 */2 * * *"
+    batch-size: 100
+    date-range-days: 30
+
+logging:
+  level:
+    org.example.clinicservice: DEBUG
+    feign: DEBUG
