@@ -1,21 +1,30 @@
 package org.example.clinicservice.client;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Builder;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
-import java.time.LocalDateTime;
-
+@Getter
+@Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class OldClientNoteDto {
 
     private String guid;
+    
+    @JsonProperty("clientGuid")
     private String clientGuid;
+    
     private String comments;
+    
+    @JsonProperty("loggedUser")
     private String loggedUser;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createdDateTime;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime modifiedDateTime;
+    
+    @JsonProperty("createdDateTime")
+    private String createdDateTime;
+    
+    @JsonProperty("modifiedDateTime")
+    private String modifiedDateTime;
+    
+    private String datetime;
 }
