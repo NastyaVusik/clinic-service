@@ -28,6 +28,8 @@ public class PatientProfile {
     private String lastName;
 
     @Column(name = "old_client_guid")
+    private String oldClientGuid;
+
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PatientOldClientGuid> oldClientGuids = new ArrayList<>();
 

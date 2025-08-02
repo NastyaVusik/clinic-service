@@ -40,5 +40,8 @@ public class PatientNote {
     @ManyToOne()
     @JoinColumn(name = "patient_id", nullable = false)
     private PatientProfile patient;
+    
+    @Column(name = "old_note_guid")
+    private String oldNoteGuid;
 }
 
