@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-patient-old-client-guid
-      author: dev
+      author: Anastasyia Vusik
       changes:
         - createTable:
             tableName: patient_old_client_guid

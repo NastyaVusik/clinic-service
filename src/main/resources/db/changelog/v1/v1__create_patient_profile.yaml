@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-patient-profile
-      author: dev
+      author: Anastasyia Vusik
       changes:
         - createTable:
             tableName: patient_profile

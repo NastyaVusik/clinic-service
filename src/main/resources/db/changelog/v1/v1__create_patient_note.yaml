@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-patient-note
-      author: dev
+      author: Anastasyia Vusik
       changes:
         - createTable:
             tableName: patient_note
@@ -39,6 +39,9 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: old_guid
+                  type: UUID
+              - column:
+                  name: old_note_guid
                   type: UUID
 
         - addForeignKeyConstraint:

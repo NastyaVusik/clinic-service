@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-company-user
-      author: dev
+      author: Anastasyia Vusik
       changes:
         - createTable:
             tableName: company_user
