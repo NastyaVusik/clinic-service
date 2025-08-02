@@ -4,5 +4,5 @@ import org.example.clinicservice.domain.CompanyUser;
 
 public interface CompanyUserService {
 
-    public void createCompanyUser(CompanyUser companyUser);
+    CompanyUser getOrCreateUser(String login);
 }
