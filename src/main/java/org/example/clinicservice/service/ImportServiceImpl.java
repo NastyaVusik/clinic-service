@@ -9,6 +9,9 @@ import org.example.clinicservice.client.OldSystemClient;
 import org.example.clinicservice.domain.CompanyUser;
 import org.example.clinicservice.domain.PatientNote;
 import org.example.clinicservice.domain.PatientProfile;
+import org.example.clinicservice.client.dto.ClientResponseDto;
+import org.example.clinicservice.exception.InvalidLoginException;
+import org.example.clinicservice.mapper.ClientMapper;
 import org.example.clinicservice.repository.PatientNoteRepository;
 import org.example.clinicservice.repository.PatientProfileRepository;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,6 +33,7 @@ public class ImportServiceImpl implements ImportService {
     private final PatientProfileRepository patientProfileRepository;
     private final OldSystemClient oldSystemClient;
     private final CompanyUserServiceImpl companyUserService;
+    private final ClientMapper clientMapper;
     
     @Value("${import.notes.date-range-days:30}")
     private int dateRangeDays;
@@ -153,30 +157,52 @@ public class ImportServiceImpl implements ImportService {
         }
     }
     
+    @Override
+    public List<ClientResponseDto> getAllClientsFromOldSystem() {
+        log.info("Retrieving all clients from old system");
+        try {
+            List<OldClientDto> oldClients = oldSystemClient.getAllClients();
+            log.info("Retrieved {} clients from old system", oldClients.size());
+            return clientMapper.toResponseDtoList(oldClients);
+        } catch (Exception e) {
+            log.error("Error retrieving clients from old system: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to retrieve clients from old system", e);
+        }
+    }
+    
     private PatientNote createNewNote(PatientProfile patient, OldClientNoteDto oldNote, 
                                      LocalDateTime createdDateTime, LocalDateTime modifiedDateTime) {
-        CompanyUser user = companyUserService.getOrCreateUser(oldNote.getLoggedUser());
-        if (user == null) {
+        try {
+            CompanyUser user = companyUserService.getOrCreateUser(oldNote.getLoggedUser());
+            if (user == null) {
+                return null;
+            }
+            
+            PatientNote note = new PatientNote();
+            note.setPatient(patient);
+            note.setNote(oldNote.getComments());
+            note.setOldNoteGuid(oldNote.getGuid());
+            note.setCreatedDateTime(createdDateTime);
+            note.setLastModifiedDateTime(modifiedDateTime);
+            note.setCreatedBy(user);
+            note.setLastModifiedBy(user);
+            
+            return note;
+        } catch (InvalidLoginException e) {
+            log.error("Invalid login for note {}: {}", oldNote.getGuid(), e.getMessage());
             return null;
         }
-        
-        PatientNote note = new PatientNote();
-        note.setPatient(patient);
-        note.setNote(oldNote.getComments());
-        note.setOldNoteGuid(oldNote.getGuid());
-        note.setCreatedDateTime(createdDateTime);
-        note.setLastModifiedDateTime(modifiedDateTime);
-        note.setCreatedBy(user);
-        note.setLastModifiedBy(user);
-        
-        return note;
     }
     
     private void updateNote(PatientNote note, OldClientNoteDto oldNote, 
                            LocalDateTime createdDateTime, LocalDateTime modifiedDateTime) {
-        CompanyUser user = companyUserService.getOrCreateUser(oldNote.getLoggedUser());
-        if (user != null) {
-            note.setLastModifiedBy(user);
+        try {
+            CompanyUser user = companyUserService.getOrCreateUser(oldNote.getLoggedUser());
+            if (user != null) {
+                note.setLastModifiedBy(user);
+            }
+        } catch (InvalidLoginException e) {
+            log.warn("Invalid login for note update {}: {}", oldNote.getGuid(), e.getMessage());
         }
         
         note.setNote(oldNote.getComments());
@@ -189,7 +215,6 @@ public class ImportServiceImpl implements ImportService {
         }
         
         try {
-            // Try different formats
             if (dateTimeStr.contains(" CDT") || dateTimeStr.contains(" CST")) {
                 // Remove timezone for now
                 String cleanDateTime = dateTimeStr.replaceAll(" [A-Z]{3}$", "");

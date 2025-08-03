@@ -1,6 +1,10 @@
 package org.example.clinicservice.service;
 
-public interface ImportService {
+import org.example.clinicservice.client.dto.ClientResponseDto;
 
-    public void importClientsNotes();
+import java.util.List;
+
+public interface ImportService {
+    void importClientsNotes();
+    List<ClientResponseDto> getAllClientsFromOldSystem();
 }
