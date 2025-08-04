@@ -18,13 +18,16 @@ http://localhost:8080/swagger-ui/index.html
 
 
 ## WireMock for Mocking the Old System API
+### Fill database with test data
+Execute sql script from `wiremock/create_patients.sql`
+
 ### Running WireMock
 ```
 cd wiremock
 docker-compose up -d
 ```
-### API Endpoints
 
+### API Endpoints
 #### Get All Clients
 ```
 POST http://localhost:8081/clients

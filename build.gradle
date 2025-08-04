@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.0'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.liquibase.gradle' version '2.2.0'
 }
 
 group = 'org.example'
@@ -28,6 +29,9 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.0.4'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
     
+    // Liquibase for database migrations
+    implementation 'org.liquibase:liquibase-core'
+    
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
     annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
@@ -40,6 +44,11 @@ dependencies {
     testImplementation 'org.testcontainers:junit-jupiter'
     testImplementation 'org.testcontainers:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+    
+    // Liquibase runtime dependency for Gradle plugin
+    liquibaseRuntime 'org.liquibase:liquibase-core'
+    liquibaseRuntime 'org.postgresql:postgresql'
+    liquibaseRuntime 'info.picocli:picocli:4.7.4'
 
 }
 
@@ -51,4 +60,18 @@ dependencyManagement {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+liquibase {
+    activities {
+        main {
+            changelogFile 'db/changelog/db.changelog-master.yaml'
+            searchPath 'src/main/resources'
+            url 'jdbc:postgresql://localhost:5432/clinic'
+            username 'admin'
+            password 'admin'
+            driver 'org.postgresql.Driver'
+        }
+    }
+    runList = 'main'
 }

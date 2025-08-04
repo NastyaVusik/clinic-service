@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: int8
                   autoIncrement: true
                   constraints:
                     primaryKey: true
@@ -25,24 +25,24 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: created_by_user_id
-                  type: BIGINT
+                  type: int8
               - column:
                   name: last_modified_by_user_id
-                  type: BIGINT
+                  type: int8
               - column:
                   name: note
                   type: VARCHAR(4000)
               - column:
                   name: patient_id
-                  type: BIGINT
+                  type: int8
                   constraints:
                     nullable: false
               - column:
                   name: old_guid
-                  type: UUID
+                  type: VARCHAR(255)
               - column:
                   name: old_note_guid
-                  type: UUID
+                  type: VARCHAR(255)
 
         - addForeignKeyConstraint:
             baseTableName: patient_note

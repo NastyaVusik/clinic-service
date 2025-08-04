@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: int8
                   autoIncrement: true
                   constraints:
                     primaryKey: true
@@ -20,7 +20,10 @@ databaseChangeLog:
                   name: last_name
                   type: VARCHAR(255)
               - column:
+                  name: old_client_guid
+                  type: VARCHAR(1000)
+              - column:
                   name: status_id
-                  type: SMALLINT
+                  type: int2
                   constraints:
                     nullable: false
