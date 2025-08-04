@@ -2,6 +2,8 @@ package org.example.clinicservice.client;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.example.clinicservice.TestcontainersConfiguration;
 import org.example.clinicservice.client.dto.ClientNotesRequestDto;
 import org.example.clinicservice.client.dto.OldClientDto;
 import org.example.clinicservice.client.dto.OldClientNoteDto;
@@ -13,6 +15,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.context.annotation.Import;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -25,6 +28,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * the JSON responses from the old system.
  */
 @SpringBootTest
+@Import(TestcontainersConfiguration.class)
 @TestPropertySource(properties = {
     "old-system.host=http://localhost:8081"
 })

@@ -1,5 +1,6 @@
 package org.example.clinicservice.mapper;
 
+import org.example.clinicservice.TestcontainersConfiguration;
 import org.example.clinicservice.client.dto.ClientResponseDto;
 import org.example.clinicservice.client.dto.OldClientDto;
 import org.example.clinicservice.util.OldClientDtoTestData;
@@ -9,6 +10,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 
 import java.util.Collections;
 import java.util.List;
@@ -16,6 +18,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Import(TestcontainersConfiguration.class)
 @SpringBootTest
 class ClientMapperTest {
 
