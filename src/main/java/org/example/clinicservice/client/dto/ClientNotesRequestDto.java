@@ -5,7 +5,7 @@ import lombok.*;
 
 @Getter
 @Setter
-@Builder
+@Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(description = "Request DTO for getting client notes from old system")
