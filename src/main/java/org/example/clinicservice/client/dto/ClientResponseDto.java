@@ -17,6 +17,9 @@ public class ClientResponseDto {
     @Schema(description = "Agency identifier", example = "vhh4")
     private String agency;
     
-    @Schema(description = "Client full name", example = "John Doe")
-    private String name;
+    @Schema(description = "Client first name", example = "John")
+    private String firstName;
+
+    @Schema(description = "Client last name", example = "Doe")
+    private String lastName;
 }
