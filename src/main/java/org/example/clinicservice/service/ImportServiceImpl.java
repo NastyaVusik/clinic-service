@@ -2,9 +2,9 @@ package org.example.clinicservice.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.clinicservice.client.ClientNotesRequestDto;
-import org.example.clinicservice.client.OldClientDto;
-import org.example.clinicservice.client.OldClientNoteDto;
+import org.example.clinicservice.client.dto.ClientNotesRequestDto;
+import org.example.clinicservice.client.dto.OldClientDto;
+import org.example.clinicservice.client.dto.OldClientNoteDto;
 import org.example.clinicservice.client.OldSystemClient;
 import org.example.clinicservice.domain.CompanyUser;
 import org.example.clinicservice.domain.PatientNote;

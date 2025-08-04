@@ -23,7 +23,7 @@ spring:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
 
 old-system:
-  host: ${OLD_SYSTEM_HOST:http://localhost:8080}
+  host: ${OLD_SYSTEM_HOST:http://localhost:8081}
 
 import:
   notes:
