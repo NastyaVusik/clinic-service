@@ -1,0 +1,20 @@
+# Docker Compose configuration for WireMock
+version: '3.8'
+
+services:
+  wiremock:
+    image: wiremock/wiremock:latest
+    container_name: clinic-wiremock
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./mappings:/home/wiremock/mappings:ro
+      - ./__files:/home/wiremock/__files:ro
+    command: ["--port", "8080", "--verbose"]
+    restart: unless-stopped
+    networks:
+      - clinic-network
+
+networks:
+  clinic-network:
+    driver: bridge

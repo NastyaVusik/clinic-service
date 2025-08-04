@@ -1,0 +1,23 @@
+{
+  "name": "Get All Clients from Old System",
+  "request": {
+    "method": "POST",
+    "url": "/clients",
+    "bodyPatterns": [
+      {
+        "equalToJson": "{}",
+        "ignoreArrayOrder": true,
+        "ignoreExtraElements": true
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache"
+    },
+    "bodyFileName": "old-clients.json"
+  },
+  "priority": 1
+}

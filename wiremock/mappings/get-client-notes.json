@@ -1,0 +1,30 @@
+{
+  "name": "Get Client Notes from Old System",
+  "request": {
+    "method": "POST",
+    "url": "/notes",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.agency"
+      },
+      {
+        "matchesJsonPath": "$.clientGuid"
+      },
+      {
+        "matchesJsonPath": "$.dateFrom"
+      },
+      {
+        "matchesJsonPath": "$.dateTo"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache"
+    },
+    "bodyFileName": "old-notes.json"
+  },
+  "priority": 1
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "comments": "Patient Care Coordinator, reached out to patient caregiver is still in the hospital.",
+    "guid": "20CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-15 11:51:59",
+    "clientGuid": "01588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-16 12:02:26 CDT",
+    "loggedUser": "p.vasya",
+    "createdDateTime": "2021-11-15 11:51:59"
+  },
+  {
+    "comments": "Follow up appointment scheduled for next week. Patient showing good progress.",
+    "guid": "21CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-16 10:30:00",
+    "clientGuid": "01588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-17 14:15:30 CDT",
+    "loggedUser": "n.petrov",
+    "createdDateTime": "2021-11-16 10:30:00"
+  },
+  {
+    "comments": "Medication adherence discussed with patient. No adverse reactions reported.",
+    "guid": "22CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-17 09:15:45",
+    "clientGuid": "02588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-18 11:45:00 CDT",
+    "loggedUser": "s.ivanov",
+    "createdDateTime": "2021-11-17 09:15:45"
+  },
+  {
+    "comments": "Patient complained of side effects. Adjusted dosage as recommended.",
+    "guid": "23CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-18 16:22:10",
+    "clientGuid": "03588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-19 09:30:15 CDT",
+    "loggedUser": "a.smith",
+    "createdDateTime": "2021-11-18 16:22:10"
+  },
+  {
+    "comments": "Lab results reviewed with patient. All values within normal range.",
+    "guid": "24CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-19 13:45:30",
+    "clientGuid": "04588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-20 15:20:45 CDT",
+    "loggedUser": "m.johnson",
+    "createdDateTime": "2021-11-19 13:45:30"
+  },
+  {
+    "comments": "Insurance verification completed. Authorization obtained for treatment.",
+    "guid": "25CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-20 11:10:20",
+    "clientGuid": "05588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-21 10:15:30 CDT",
+    "loggedUser": "k.williams",
+    "createdDateTime": "2021-11-20 11:10:20"
+  },
+  {
+    "comments": "Patient missed appointment. Rescheduled for next available slot.",
+    "guid": "26CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-21 14:35:50",
+    "clientGuid": "06588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-22 13:40:20 CDT",
+    "loggedUser": "j.brown",
+    "createdDateTime": "2021-11-21 14:35:50"
+  },
+  {
+    "comments": "Physical therapy session completed. Patient showing improvement.",
+    "guid": "27CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-22 12:20:40",
+    "clientGuid": "07588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-23 11:25:35 CDT",
+    "loggedUser": "l.davis",
+    "createdDateTime": "2021-11-22 12:20:40"
+  },
+  {
+    "comments": "Prescription refill requested. Approved for 30-day supply.",
+    "guid": "28CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-23 15:50:15",
+    "clientGuid": "08588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-24 16:10:50 CDT",
+    "loggedUser": "r.miller",
+    "createdDateTime": "2021-11-23 15:50:15"
+  },
+  {
+    "comments": "Patient education provided regarding diet and exercise modifications.",
+    "guid": "29CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-24 10:15:25",
+    "clientGuid": "09588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-25 09:45:15 CDT",
+    "loggedUser": "c.wilson",
+    "createdDateTime": "2021-11-24 10:15:25"
+  },
+  {
+    "comments": "Emergency contact information updated in system.",
+    "guid": "30CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-25 13:30:40",
+    "clientGuid": "10588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-26 14:20:30 CDT",
+    "loggedUser": "d.moore",
+    "createdDateTime": "2021-11-25 13:30:40"
+  },
+  {
+    "comments": "Referral made to specialist for further evaluation.",
+    "guid": "31CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-26 11:45:55",
+    "clientGuid": "01588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-27 12:35:40 CDT",
+    "loggedUser": "b.taylor",
+    "createdDateTime": "2021-11-26 11:45:55"
+  },
+  {
+    "comments": "Patient reported improvement in symptoms since last visit.",
+    "guid": "32CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-27 16:25:30",
+    "clientGuid": "02588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-28 15:50:25 CDT",
+    "loggedUser": "g.anderson",
+    "createdDateTime": "2021-11-27 16:25:30"
+  },
+  {
+    "comments": "Discharge planning initiated. Home care services arranged.",
+    "guid": "33CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-28 09:40:20",
+    "clientGuid": "03588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-29 10:15:45 CDT",
+    "loggedUser": "h.thomas",
+    "createdDateTime": "2021-11-28 09:40:20"
+  },
+  {
+    "comments": "Vital signs monitored. Blood pressure elevated, medication adjusted.",
+    "guid": "34CBCEDA-3764-7F20-0BB6-4D6DD46BA9F8",
+    "modifiedDateTime": "2021-11-29 14:10:35",
+    "clientGuid": "04588E84-D45A-EB98-F47F-716073A4F1EF",
+    "datetime": "2021-09-30 13:25:50 CDT",
+    "loggedUser": "f.jackson",
+    "createdDateTime": "2021-11-29 14:10:35"
+  }
+]
